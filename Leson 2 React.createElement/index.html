@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React.createElement</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script>
+        //React.createElement('element name',{props},[...content/conponent])
+        const Title=React.createElement('h2',{
+            className:'title',
+            //color:'red'
+        },'This is title')
+        const Image=React.createElement('img',{
+            src:'img.jpg',
+            alt:'img'
+        })
+        const App=React.createElement('div',null,Title,Image)
+        const root=document.getElementById('root')
+        ReactDOM.render(App,root)
+    </script>
+</body>
+</html>
