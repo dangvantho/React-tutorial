@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Greeting from './components/Greeting'
-import ClassComponent from './components/ClassComponent'
+import Todo from './components/Todo'
 function App() {
   return (
     <div className="App">
-      <Greeting />
-      <ClassComponent />
+      <Todo textContent="Đi ăn cơm" />
+      <Todo textContent="Học bài" />
+      <Todo textContent="Đi chơi" />
+
     </div>
   );
 }
