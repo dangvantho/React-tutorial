@@ -1,0 +1,10 @@
+
+img{
+    width: 100%;
+}
+.isSmall{
+    position: relative;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+}

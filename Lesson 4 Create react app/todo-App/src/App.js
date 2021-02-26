@@ -1,13 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
 import Todo from './components/Todo'
 function App() {
+  const items=[
+    {isSmall:true , img: 'http://bit.ly/3ayPusa' },
+    {isSmall:false , img: 'http://bit.ly/3ayPusa' },
+    {isSmall:false , img: 'http://bit.ly/3ayPusa' },
+    {isSmall:false , img: 'http://bit.ly/3ayPusa' },
+    {isSmall:true , img: 'http://bit.ly/3ayPusa' },
+    {isSmall:false , img: 'http://bit.ly/3ayPusa' },
+  ]
   return (
     <div className="App">
-      <Todo textContent="Đi ăn cơm" />
-      <Todo textContent="Học bài" />
-      <Todo textContent="Đi chơi" />
-
+      {items.map((item,index)=>{
+        return (
+          <Todo isSmall={item.isSmall} image={item.img} key={index} />
+        )
+      })}
     </div>
   );
 }

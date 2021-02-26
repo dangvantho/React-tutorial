@@ -1,5 +1,12 @@
+
+.col-3{
+  min-width: 150px;
+  flex-basis: 30%;
+}
 .App {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .App-logo {
