@@ -3,12 +3,12 @@ import './Todo.css'
 import classNames from 'classnames/bind'
 class Todo extends Component {
     render() {
-        const props=this.props
+        const {isComplete,onClick,children,dataId}=this.props
         return(
-            <div className={classNames('todo',{done:props.isComplete})} >
-               <input type='checkbox' onClick={props.onClick} 
-                checked={props.isComplete} data-id={props.dataId} /> 
-               {props.children}
+            <div className={classNames('todo',{done:isComplete})} >
+               <input type='checkbox' onClick={onClick} 
+                checked={isComplete} data-id={dataId} /> 
+               {children}
             </div>
         )
     }
