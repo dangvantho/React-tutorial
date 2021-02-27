@@ -1,0 +1,41 @@
+.traffic-light{
+    min-width: 120px;
+    max-width: 200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eceef3;
+    padding: 10px 0;
+  }
+  .time{
+    
+  }
+  .circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 10px;
+  }
+  .red{
+    color: red;
+    background-color: red;
+    opacity: 0.3;
+  }
+  .green{
+    color: rgb(13, 233, 13);
+    background-color: rgb(13, 233, 13);
+    opacity: 0.3
+  }
+  .yellow{
+    color: rgb(255, 187, 0);
+    background-color: rgb(255, 187, 0);
+    opacity: 0.3
+  }
+  .white{
+    background-color: transparent;
+    opacity: 1;
+  }
+  .active{
+    opacity: 1;
+  }
