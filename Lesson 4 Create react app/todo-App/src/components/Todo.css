@@ -1,10 +1,8 @@
-
-img{
-    width: 100%;
+.todo{
+    line-height: 30px;
+    color: rgb(17, 0, 255);
 }
-.isSmall{
-    position: relative;
-    top: 25%;
-    left: 25%;
-    width: 50%;
+.done{
+    text-decoration:line-through;
+    color: black;
 }
