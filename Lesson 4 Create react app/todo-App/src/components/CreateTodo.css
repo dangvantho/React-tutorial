@@ -1,0 +1,17 @@
+.dropdown-icon{
+    margin: 0 10px;
+    height: 30px;
+    width: 30px;
+    background-image: url('../asset/img/down-arrow.svg');
+    background-repeat: no-repeat ;
+    opacity: 0.3;
+    background-position: center;
+}
+.dropdown-icon:hover{
+    opacity: 1;
+}
+.input{
+    border: none;
+    outline: none;
+    opacity: 0.5;
+}

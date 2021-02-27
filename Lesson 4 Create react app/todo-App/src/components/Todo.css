@@ -1,8 +1,29 @@
 .todo{
+    flex-grow: 1;
     line-height: 30px;
     color: rgb(17, 0, 255);
+    font-size: 24px;
 }
 .done{
     text-decoration:line-through;
     color: black;
+}
+.checkbox{
+    /* -webkit-appearance: none;
+    appearance: none; */
+    height: 30px;
+    flex-basis: 30px;
+    margin: 0 10px;
+    border: 2px solid #c7e0db;
+    border-radius: 50%;
+    outline: none;
+}
+.checkImg{
+    background-image: url('../asset/img/check.svg');
+}
+.deleteImg{
+    opacity: 0;
+}
+.row:hover .deleteImg{
+    opacity: 0.6;
 }
