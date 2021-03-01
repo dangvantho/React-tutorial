@@ -9,7 +9,7 @@ class CreateTodo extends Component {
                 <div className={name} onClick={this.props.onCheckAll}></div>
                 <input 
                    onKeyDown={this.props.onKeyDown} 
-                   className='todo input' 
+                   className='center input' 
                    placeholder='What need to be done'
                    value={this.props.value}    
                 />

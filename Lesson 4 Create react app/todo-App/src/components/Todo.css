@@ -1,9 +1,4 @@
-.todo{
-    flex-grow: 1;
-    line-height: 30px;
-    color: rgb(17, 0, 255);
-    font-size: 24px;
-}
+
 .done{
     text-decoration:line-through;
     color: black;
@@ -23,6 +18,7 @@
 }
 .deleteImg{
     opacity: 0;
+    margin-right: 10px;
 }
 .row:hover .deleteImg{
     opacity: 0.6;

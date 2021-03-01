@@ -1,0 +1,26 @@
+.option{
+    color: rgb(119,119,119);
+    font-size: 14px;
+}
+.items-select{
+    margin-left: 11px;
+}
+.option ul{
+    list-style: none;
+}
+.option ul li{
+    display: inline-block;
+    font-size: 14px;
+    padding: 3px 7px;
+    color: rgb(119,119,119);
+    margin: 0 3px;
+    cursor: pointer;
+    line-height: 24px;
+}
+.selected{
+    border: 1px solid rgba(175, 47, 47, 0.2);
+}
+.clear-items{
+    margin-right: 11px;
+    cursor: pointer;
+}
