@@ -1,0 +1,8 @@
+.box{
+    height: 200px;
+    width: 200px;
+    border-radius: 6px;
+    color: azure;
+    cursor: pointer;
+    margin: auto;
+}
