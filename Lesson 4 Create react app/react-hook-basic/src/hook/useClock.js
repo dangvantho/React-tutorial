@@ -7,7 +7,7 @@ function formatDate(date){
     return `${hours}:${minutes}:${seconds}`
 }
 
-function Clock(props) {
+function useClock(props) {
     const [time,setTime]=useState(new Date())
     useEffect(()=>{
         var timeInterval= setInterval(() => {
@@ -17,11 +17,8 @@ function Clock(props) {
             clearInterval(timeInterval)
         }
     },[])
-    return (
-        <div style={{fontSize: '32px'}} >
-            {formatDate(time)}
-        </div>
-    );
+    const timeString=formatDate(time)
+    return ({timeString})
 }
 
-export default Clock;
+export default useClock;

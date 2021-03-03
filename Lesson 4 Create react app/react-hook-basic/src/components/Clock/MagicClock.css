@@ -1,0 +1,13 @@
+.magic-clock{
+    padding: 10px 20px;
+    width: 200px;
+    margin: 0 auto;
+    font-size: 20px;
+    border: 1px solid #ff33aa;
+    border-radius: 5px;
+    color: #ff33aa;
+}
+.magic-clock:hover{
+    color: #fff;
+    background-color: #ff33aa;
+}

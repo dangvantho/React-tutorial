@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Box from './components/Box/Box'
 import Todo from './components/Todo/TodoList'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import AddTodo from './components/AddTodo/AddTodo'
 import PostList from './components/PostList/PostList';
 import axios from 'axios'
@@ -10,6 +10,9 @@ import Pagination from './components/Pagination/Pagination';
 import PostFilter from './components/PosTFilter/PostFilter';
 import queryString from 'query-string'
 import Clock from './components/Clock/Clock.jsx';
+import MagicClock from './components/Clock/MagicClock';
+import Memo from './components/Memo/Memo';
+import Pure from './components/Memo/Pure';
 const initialTodos=[
   {id:238232, title:'Đi chơi'},
   {id:321213, title:'Đi câu cá'}
@@ -74,17 +77,22 @@ function App() {
       title_like: value,
     })
   }
-  
+  //Using useCallback(func,dependencies)
+  const handleChartChange=useCallback(()=>{},[])
+  //Using useMemo()
+  const name=useMemo(()=>({x:'thọ'}),[])
   return (
     <div className="App">
       <Clock />
+      <MagicClock/>
       <PostFilter onSubmit={handleSubmit} />
       <PostList posts={posts} />
       <Pagination 
         pagination={pagination}
         onPageChange={handlePageChage}
       />
-      
+      <Memo name='thọ' onChartChange={handleChartChange} />
+      <Pure name={name.x} />
     </div>
   );
 }
