@@ -1,33 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames'
 import './Pagination.css'
 Pagination.propTypes = {
-    posts:PropTypes.array,
-    onNext:PropTypes.func,
-    onPrev:PropTypes.func,
-    isPageOne:PropTypes.bool,
-    isPageLast:PropTypes.bool,
-};
+    pagination:PropTypes.object,
+    onPageChange:PropTypes.func
+}
 Pagination.defaultProps={
-    posts:[],
-    onNext:null,
-    onPrev:null,
-    isPageOne:true,
-    isPageLast:false
+    pagination:{},
+    onPageChange:null,
 }
 function Pagination(props) {
-    const {posts,onPrev,onNext,isPageOne,isPageLast}=props
+    const {pagination,onPageChange}=props
+    const {_page,_limit,_totalRows}=pagination
+    const totalPage=Math.ceil(_totalRows/_limit)
+    function handlePageChage(value){
+        if(value>totalPage || value==0) return
+        if(onPageChange)
+          onPageChange(value)
+    }
+    
     return (
-        <ul>
-            {posts.map((post,index)=>{
-                return(
-                    <li key={index} >{post.title}</li>
-                )
-            })}
-            <p className={classNames('btn',{opacity:isPageOne})} onClick={onPrev} >{'<'}</p>
-            <p className={classNames('btn',{opacity:isPageLast})} onClick={onNext} >{'>'}</p>
-        </ul>
+        <div>
+            <button disabled={_page==1} onClick={()=>handlePageChage(_page-1)} >
+                Prev
+            </button>
+            <button disabled={_page==totalPage} onClick={()=>handlePageChage(_page+1)} >
+                Next
+            </button>
+        </div>
     );
 }
 

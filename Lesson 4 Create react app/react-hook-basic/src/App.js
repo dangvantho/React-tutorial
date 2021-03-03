@@ -7,6 +7,8 @@ import AddTodo from './components/AddTodo/AddTodo'
 import PostList from './components/PostList/PostList';
 import axios from 'axios'
 import Pagination from './components/Pagination/Pagination';
+import PostFilter from './components/PosTFilter/PostFilter';
+import queryString from 'query-string'
 const initialTodos=[
   {id:238232, title:'Đi chơi'},
   {id:321213, title:'Đi câu cá'}
@@ -19,19 +21,33 @@ function randomNumber(todos){
 function App() {
   const [todos,setTodos]=useState(initialTodos)
   const [posts,setPosts]=useState([])
-  const [page,setPage]=useState(1)
+  const [pagination,setPagination]=useState({
+    _totalRows:1,
+    _limit:10,
+    _page:1,
+  })
+  const [filter,setFilter]=useState({
+    _limit:10,
+    _page:1,
+  })
+  //Run when filter change
   useEffect(()=>{
-    axios.get('http://js-post-api.herokuapp.com/api/posts?_limit=10&_page='+page)
+    const searchString=queryString.stringify(filter)
+    //console.log('first')
+    axios.get(`http://js-post-api.herokuapp.com/api/posts?${searchString}`)
          .then(res=>{
-           const newPosts=res.data.data
-           setPosts(newPosts)
+           const {data,pagination}=res.data
+           setPagination(pagination)
+           setPosts(data)
          })
-  },[page])
+  },[filter])
+  //Delete todo
   function handleClickTodo(index){
     const newTodos=[...todos]
     newTodos.splice(index,1)
     setTodos(newTodos)
   }
+  //Add new Todo
   function handleAddTodo(value){
     const newTodos=[...todos]
     const todo={
@@ -42,30 +58,29 @@ function App() {
     setTodos(newTodos)
     
   }
-  function handleClickNext(){
-    if(page<=5){
-      const newPage=page+1
-      setPage(newPage)
-    }
+  //Change filter when click Prev or Next
+  function handlePageChage(value){
+    setFilter({
+      ...filter,
+      _page:value,
+    })
   }
-  function handleClickPrev(){
-    if(page>=2) {
-      const newPage=page-1
-      setPage(newPage)
-    }
+  //change filter when input submit
+  function handleSubmit(value){
+    setFilter({
+      ...filter,
+      _page:1,
+      title_like: value,
+    })
   }
+  
   return (
     <div className="App">
-      {/* <Box />
-      <AddTodo  onChange={handleAddTodo} />
-      <Todo todos={todos} onClick={handleClickTodo}  /> */}
-      {/* <PostList posts={posts}/> */}
+      <PostFilter onSubmit={handleSubmit} />
+      <PostList posts={posts} />
       <Pagination 
-        onNext={handleClickNext} 
-        onPrev={handleClickPrev}
-        isPageOne={page==1 ? true : false}
-        isPageLast={page==5 ? true: false} 
-        posts={posts} 
+        pagination={pagination}
+        onPageChange={handlePageChage}
       />
     </div>
   );

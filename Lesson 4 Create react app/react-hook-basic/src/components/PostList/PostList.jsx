@@ -9,33 +9,15 @@ PostList.defaultProps={
 }
 function PostList(props) {
     const {posts}=props
-    const [page,setPage]=useState(1)
-    console.log(posts)
-    let list=posts.slice((page-1)*6,page*6)
-    function handleNext(){
-        const maxPages=Math.ceil(posts.length/6)
-        if(page<maxPages){
-            const newPage=page+1
-            setPage(newPage)
-        }
-
-    }
-    function handlePreve(){
-        if(page>1){
-            const newPage=page-1
-            setPage(newPage)
-        }
-    }
+    //console.log('two')
     return (
         <ul className="post-list">
             <li>Post List: </li>
-            {list.map((post,index)=>{
+            {posts.map((post,index)=>{
                 return(
                     <li key={index} >{post.title}</li>
                 )
             })}
-            <button onClick={handlePreve} >{'<'}</button>
-            <button onClick={handleNext} >{'>'}</button>
         </ul>
     );
 }
