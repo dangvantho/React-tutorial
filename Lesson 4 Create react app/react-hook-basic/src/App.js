@@ -9,6 +9,7 @@ import axios from 'axios'
 import Pagination from './components/Pagination/Pagination';
 import PostFilter from './components/PosTFilter/PostFilter';
 import queryString from 'query-string'
+import Clock from './components/Clock/Clock.jsx';
 const initialTodos=[
   {id:238232, title:'Đi chơi'},
   {id:321213, title:'Đi câu cá'}
@@ -76,12 +77,14 @@ function App() {
   
   return (
     <div className="App">
+      <Clock />
       <PostFilter onSubmit={handleSubmit} />
       <PostList posts={posts} />
       <Pagination 
         pagination={pagination}
         onPageChange={handlePageChage}
       />
+      
     </div>
   );
 }
