@@ -41,3 +41,19 @@
 .active{
   opacity: 1 !important;
 }
+.menu{
+  display: flex;
+  padding: 5px 0;
+  background-color: #f6f9fa;
+}
+.menu-link{
+  padding:10px 15px;
+  text-decoration: none;
+}
+.menu-link:hover{
+  opacity: 0.5;
+}
+.container{
+  width: 200px;
+  margin: 0 auto;
+}

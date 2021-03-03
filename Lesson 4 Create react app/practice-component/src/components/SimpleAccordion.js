@@ -6,7 +6,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
 import {ThemeProvider} from '@material-ui/core/styles'
-import { purple } from '@material-ui/core/colors';
+import {Button} from '@material-ui/core'
 //import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles((theme) => ({
@@ -19,10 +19,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const theme = createMuiTheme({
+  overrides:{
+    MuiTypography:{
+      text: {
+        // Some CSS
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        borderRadius: 3,
+        border: 0,
+        color: 'white',
+        height: 48,
+        padding: '0 30px',
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+      },
+    },
+    MuiButton:{
+      
+    }
+  },
   palette: {
+    
     primary: {
-      // Purple and green play nicely together.
-      main: purple[500],
+      dark: '#000',
+      light: '#757ce8',
+      main: '#3f50b5',
+      contrastText: '#fff',
     },
     secondary: {
       // This is green.A700 as hex.
@@ -50,6 +70,12 @@ export default function SimpleAccordion() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      <Button 
+        color="primary"
+        variant='outlined'
+      > 
+         Change UI
+      </Button>
     </ThemeProvider>
   );
 }
