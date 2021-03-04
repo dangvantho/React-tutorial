@@ -6,6 +6,7 @@ import {
   Link
 } from 'react-router-dom'
 import StepNumber from './components/StepNumber';
+import withGrayScale from './components/withGrayScale';
 function Home(){
   return(
     <div >
@@ -15,6 +16,8 @@ function Home(){
 }
 const About=()=>(<div>About</div>)
 const Contact=()=>(<div>Contact</div>)
+const GrayScale=({src})=>(<img src={src} alt='img' />)
+const HigherOrderComponent=withGrayScale(GrayScale)
 function App() {
   return (
     <Router >
@@ -26,7 +29,11 @@ function App() {
         </div>
         <div className="container">
           <Route path='/' exact component={Home}/>
-          <Route path='/Contact' exact component={Contact}/>
+          <Route path='/Contact' exact >
+            <HigherOrderComponent 
+              src="https://picsum.photos/200/300"
+            />   
+          </Route>
           <Route path ='/About' component={About}/>
         </div>
       </div>
