@@ -1,0 +1,14 @@
+.pagination-link{
+    padding: 5px 15px;
+    margin: 20px 0;
+
+}
+.pagination-link:hover{
+    color: #fff;
+    background-color: blue;
+    text-decoration: none;
+}
+.active{
+    background-color: blue;
+    color: #fff;
+}

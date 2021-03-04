@@ -25,7 +25,7 @@ const MenuTop = (props) => {
               <Link className="nav-link-edit" to='/' >Home</Link>
             </NavItem>
             <NavItem>
-              <Link className="nav-link-edit" to='/products/' >Products</Link>
+              <Link className="nav-link-edit" to='/products' >Products</Link>
             </NavItem>
           </Nav>
         </Collapse>
