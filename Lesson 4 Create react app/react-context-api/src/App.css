@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+  width: 500px;
+  margin: 50px auto;
+}
+ul{
+  list-style: none;
+}
+.navbar h1{
+  margin: 5px 0;
+}
+.navbar ul{
+  margin: 0;
+  padding: 0;
+}
+.navbar li{
+  display: inline-block;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+.book-list{
+  padding: 5px;
+  margin: 0;
+}
+.book-list li{
+  width: 400px;
+  margin: 20px auto;
+  padding: 10px;
+}
