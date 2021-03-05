@@ -6,6 +6,7 @@ import axios from 'axios'
 import MenuTop from './components/MenuTop'
 import Product from './pages/Product'
 import { useEffect, useState } from 'react'
+import AppProvider from './Context/AppProvider'
 
 function App() {
   const [products,setProducts]=useState([])
@@ -18,13 +19,15 @@ function App() {
   },[])
   return (
     <Router>
-      <div className="App">
-        <MenuTop/>
-        <Route path='/' exact>Home</Route>
-        <Route path='/products' exact>
-          <Product products={products} />
-        </Route>
-      </div>
+      <AppProvider>
+        <div className="App">
+          <MenuTop/>
+          <Route path='/' exact>Home</Route>
+          <Route path='/products' exact>
+            <Product products={products} />
+          </Route>
+        </div>
+      </AppProvider>
     </Router>
     
   );

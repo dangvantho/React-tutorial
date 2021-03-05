@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {useLocation} from 'react-router-dom'
 import PropTypes from 'prop-types';
 import {
@@ -13,6 +13,7 @@ import {
     Button,
 } from 'reactstrap'
 import MyPagination from '../components/Pagination';
+import AppContext from '../Context/AppContext';
 Product.propTypes = {
     products:PropTypes.array
 };
@@ -21,6 +22,8 @@ Product.defaultProps={
 }
 function Product(props) {
     const {products}=props
+    //AppConsomer
+    const {onChangeCart}=useContext(AppContext)
     // useState Pagination and caculate maxPage
     const [pagination,setPagination]=useState({
         page: 1,
@@ -44,6 +47,15 @@ function Product(props) {
             page:value-0,
         })
     }
+
+    //HandleChageCart call when click Add cart
+    function handleChangeCart(value){
+        if(onChangeCart){
+            onChangeCart(value)
+        }
+    }
+
+
     return (
         <Container>
             <Row>
@@ -55,7 +67,7 @@ function Product(props) {
                               <CardBody>
                                 <CardTitle tag="h5">{data.name}</CardTitle>
                                 <CardText>{data.description}</CardText>
-                                <Button>Button</Button>
+                                <Button onClick={()=>handleChangeCart(data)} >Button</Button>
                               </CardBody>
                             </Card>
                         </Col>

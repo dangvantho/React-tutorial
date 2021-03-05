@@ -21,9 +21,15 @@ function MyPagination(props) {
     const {pagination,onChangePage,maxPages}=props
     const {page,limit}=pagination
     function handlePageChange(e){
-        if(onChangePage){
-            onChangePage(e.target.textContent)
+        if(!onChangePage) return
+        let value=e.target.textContent
+        if(value=='>'){
+            value= value===maxPages? maxPages: page+1
         }
+        if(value=='<'){
+            value= value===1? 1:page-1
+        }
+        onChangePage(value)
     }
     return (
         <Row className="justify-content-center" >

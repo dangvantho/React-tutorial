@@ -1,3 +1,17 @@
 .nav-link-edit{
     padding: 0 10px;
 }
+.cart-count{
+    width: 20px;
+    height: 20px;
+    left: 25px;
+    z-index: 1;
+    text-align: center;
+    
+    line-height: 20px;
+    border-radius: 50%;
+
+    background-color: rgb(255, 196, 0);
+    color: #fff;
+
+}
