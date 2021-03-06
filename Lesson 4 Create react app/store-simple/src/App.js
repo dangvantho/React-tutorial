@@ -7,6 +7,7 @@ import MenuTop from './components/MenuTop'
 import Product from './pages/Product'
 import { useEffect, useState } from 'react'
 import AppProvider from './Context/AppProvider'
+import Cart from './pages/Cart'
 
 function App() {
   const [products,setProducts]=useState([])
@@ -25,6 +26,9 @@ function App() {
           <Route path='/' exact>Home</Route>
           <Route path='/products' exact>
             <Product products={products} />
+          </Route>
+          <Route path='/my-carts' exact>
+            <Cart />
           </Route>
         </div>
       </AppProvider>

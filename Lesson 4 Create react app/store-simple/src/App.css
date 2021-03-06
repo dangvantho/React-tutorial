@@ -1,0 +1,23 @@
+.payment{
+   background: #4194f3;
+   color: white;
+   opacity: 0.4;
+   transition: all 0.5 ease;
+}
+.payment{
+    cursor: pointer;
+    opacity: 1;
+}
+.cart{
+    min-height: 500px;
+    
+}
+.w-200{
+    min-width: 250px;
+}
+.text-red{
+    color: red;
+}
+.bg-red{
+    background-color: red !important;
+}
