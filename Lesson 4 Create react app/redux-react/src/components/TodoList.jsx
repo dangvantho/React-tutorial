@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux'
 
 TodoList.propTypes = {
     todoList:PropTypes.array,
@@ -45,5 +46,10 @@ function TodoList(props) {
         
     );
 }
+const stateToProps=(state)=>{
+    return {
+        todoList: state.tasks,
+    }
+}
 
-export default TodoList;
+export default connect(stateToProps,null)(TodoList)
