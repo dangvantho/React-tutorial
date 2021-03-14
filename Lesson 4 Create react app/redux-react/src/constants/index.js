@@ -1,2 +1,6 @@
-export const TOGGLE_STATUS='TOGGLE_STATUS'
+export const TOGGLE_OPEN_FORM='TOGGLE_OPEN_FORM'
+export const CLOSE_FORM='CLOSE_FORM'
 export const RENDER_TODO='RENDER_TODO'
+export const ADD_TODO='ADD_TODO'
+export const DELETE_TODO='DELETE_TODO'
+export const EDIT_TODO='EDIT_TODO'
