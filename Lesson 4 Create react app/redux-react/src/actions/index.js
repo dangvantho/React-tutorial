@@ -5,10 +5,10 @@ export const add=(todo)=>{
         payload: todo,
     }
 }
-export const toggleForm =(index,todo)=>{
+export const toggleForm =todo=>{
     return {
         type: types.TOGGLE_OPEN_FORM,
-        payload:{index,todo}
+        payload:{todo}
     }
 }
 export const closeForm=()=>{
@@ -22,9 +22,21 @@ export const deleteTodo =id=>{
         payload: id,
     }
 }
-export const editTodo= (id,value)=>{
+export const editTodo= value=>{
     return {
         type: types.EDIT_TODO,
-        payload: {id, value}
+        payload: { ...value}
+    }
+}
+export const sortByName=(value)=>{
+    return {
+        type:types.SORT_BY_NAME,
+        payload: value
+    }
+}
+export const sortByStatus=value=>{
+    return {
+        type: types.SORT_BY_STATUS,
+        payload:value,
     }
 }

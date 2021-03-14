@@ -11,7 +11,7 @@ EditForm.propTypes = {
 
 function EditForm(props) {
     const {editForm,onSubmit,closeForm}=props
-    const {todo,index,isOpen}=editForm
+    const {todo,isOpen}=editForm
     const [status,setStatus]=useState(false)
     const [value,setValue]=useState('')
     useEffect(()=>{
@@ -20,7 +20,8 @@ function EditForm(props) {
     },[editForm])
     function handleSubmit(e){
         e.preventDefault()
-        onSubmit(index,{
+        onSubmit({
+            ...todo,
             name: value,
             onDone: status,
         })
