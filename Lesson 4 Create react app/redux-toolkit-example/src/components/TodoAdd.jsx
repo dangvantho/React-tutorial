@@ -16,6 +16,7 @@ function TodoAdd(props) {
         add({
             id:shortId.generate(),
             name: value,
+            completed: false,
         })
         setValue('')
     }
